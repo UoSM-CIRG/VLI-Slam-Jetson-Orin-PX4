@@ -9,35 +9,42 @@
 - Zedm camera 
 
 ### Start
-
+**1. Clone the Repository:**
 ```
 git clone https://github.com/UoSM-CIRG/VSlam-Jetson-Orin-PX4.git
 git submodule update --init --recursive
 ```
 
-Add following to ~/.bashrc, Replace the ISAAC_ROS_WS with your own workspace
+**2. Update Environment (replace with your actual workspace):**
+
+Add these lines to your ~/.bashrc file
 ```
 export ISAAC_ROS_WS=/home/nvidia/workspaces/VSlam-Jetson-Orin-PX4/
 alias isaac_ros_container="${ISAAC_ROS_WS}/src/isaac_ros_common/scripts/run_dev.sh ${ISAAC_ROS_WS}"
 ```
 
+**3. Build docker image**
+
 Build the docker image and start the container with
 ```
 isaac_ros_container
 ```
+**4. Build ros packages**
 
 Once inside the container, build the ros packages with
 ```
 colcon build --symlink-install
 ```
+**5. Launch px4 bridge**
 
 In the same terminal, source the newly build ros packages and run the px4_isaac_ros_bridge.
-this will remap the odmotry topic from isaac_ros_visual_slam for mavros px4.
-you can go to the launch file to disable rviz node or change remote QGroundControl url 
+This will remap the odmotry topic from isaac_ros_visual_slam for mavros px4.
 ```
 source install/setup.sh
 ros2 launch px4_isaac_ros_bridge px4_isaac_ros_bridge.launch.py
 ```
+
+**6. Launch isaac visual slam with zed wrapper**
 
 In another terminal, launch the container and proceed to launch the isaac_ros node with zedm camera
 ```
@@ -66,7 +73,7 @@ You should be able to view the following output
 
 2. Check cable/usb connection with `sudo dmesg -wH` or restart docker with `systemctl restart docker.service` if zed camera fail to open.
 
-3. low odometry publishing rate (not sure where could be the bottleneck), thing that you can try
+3. Low /mavros/odometry/out topic publishing rate (not sure where could be the bottleneck), thing that you can try
 - Reducing resolution and increasing the publishing rate of zed camera
 - Disable the ros debug related application such as rviz and rqt 
 - Runinng localization only or disable mapping. 
