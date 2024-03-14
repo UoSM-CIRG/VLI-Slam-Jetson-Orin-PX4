@@ -1,2 +1,2 @@
-# Visual-Lidar-Slam with Jetson-Orin-Nano-8GB and PX4
+# Visual-Lidar-Slam with Jetson-Orin-Nano and PX4
 
