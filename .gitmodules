@@ -1,18 +1,19 @@
 [submodule "src/isaac_ros_common"]
 	path = src/isaac_ros_common
-	url = https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common.git
+	url = https://github.com/limshoonkit/isaac_ros_common.git
 [submodule "src/zed_ros2_wrapper"]
 	path = src/zed_ros2_wrapper
-	url = https://github.com/stereolabs/zed-ros2-wrapper.git
+	url = https://github.com/limshoonkit/zed-ros2-wrapper.git
 [submodule "src/px4_isaac_ros_bridge"]
 	path = src/px4_isaac_ros_bridge
 	url = https://github.com/limshoonkit/PX4_ISAAC_ROS_BRIDGE.git
 [submodule "src/isaac_ros_visual_slam"]
 	path = src/isaac_ros_visual_slam
-	url = https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_visual_slam.git
+	url = https://github.com/limshoonkit/isaac_ros_visual_slam.git
 [submodule "src/isaac_ros_nitros"]
 	path = src/isaac_ros_nitros
 	url = https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_nitros.git
 [submodule "src/isaac_ros_image_pipeline"]
 	path = src/isaac_ros_image_pipeline
 	url = https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_image_pipeline.git
+
